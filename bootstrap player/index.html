@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.6/mediaelementplayer.css" />
+
+    <link rel="stylesheet" type="text/css" href="dist/quality/quality.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/loop/loop.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/speed/speed.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/airplay/airplay.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/context-menu/context-menu.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/stop/stop.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/jump-forward/jump-forward.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/skip-back/skip-back.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/source-chooser/source-chooser.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/postroll/postroll.min.css">
+
+    <title>Bootstrap Player</title>
+  </head>
+  <body>
+      <div class="container mt-5 mb-5">
+        <div class="row">
+          <div class="col-md-8">
+            <video width="728" height="418" controls poster="">
+              <source src="D:\Movies\[TorrentCounter.to].Good.Newwz.2019.Hindi.720p.WEB-DL.x264.ESubs.[999MB].[MP4]\[TorrentCounter.to].Good.Newwz.2019.Hindi.720p.mp4" type="video/mp4" size="576" data-quality="HD">
+
+                <link rel="postroll" href="end.html">
+            </video>
+            <br />
+            <img id="ad-inline" src="" />  
+          </div>
+          <div class="col-md-4">
+            <img src="" id="ad-sidebar">
+          </div>
+        </div>
+      </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.6/mediaelement-and-player.min.js"></script>
+
+    <script src="dist/quality/quality.min.js"></script>
+    <script src="dist/loop/loop.min.js"></script>
+    <script src="dist/speed/speed.min.js"></script>
+    <script src="dist/airplay/airplay.min.js"></script>
+    <script src="dist/context-menu/context-menu.min.js"></script>
+    <script src="dist/stop/stop.min.js"></script>
+    <script src="dist/jump-forward/jump-forward.min.js"></script>
+    <script src="dist/skip-back/skip-back.min.js"></script>
+    <script src="dist/source-chooser/source-chooser.min.js"></script>
+    <script src="dist/preview/preview.min.js"></script>
+    <script src="dist/postroll/postroll.min.js"></script>
+    <script src="dist/markers/markers.min.js"></script>
+
+
+    <script type="text/javascript">
+      $('video').mediaelementplayer({
+        features: ['playpause', 'current', 'progress', 'duration', 'volume', 'tracks', 'speed', 'quality', 'loop', 'fullscreen', 'postroll', 'markers'],
+
+        speeds: [
+          {name: '0.25', value: '0.25'},
+          {name: '0.5', value: '0.5'},
+          {name: '0.75', value: '0.75'},
+          {name: 'Normal', value: '1'},
+          {name: '1.25', value: '1.25'},
+          {name: '1.5', value: '1.5'},
+          {name: '1.75', value: '1.75'},
+          {name: '2', value: '2'},
+        ],
+        markers: [3, 45, 100, 150],
+        markerColor: '#ffff00',
+        markerWidth: 5,
+        markerCallback: function(media, time){
+          var adInline = $('#ad-inline');
+          var adSidebar = $('#ad-sidebar');
+          if(Math.round(time) == 3){
+            adInline.prop('src', '1.jfif');
+            adSidebar.prop('src', '1.jfif');
+          } else if(Math.round(time) == 45){
+            adInline.prop('src', '2.jfif');
+            adSidebar.prop('src', '2.jfif');
+          }else if(Math.round(time) == 100){
+            adInline.prop('src', '3.jfif');
+            adSidebar.prop('src', '3.jfif');
+          }else if(Math.round(time) == 150){
+            adInline.prop('src', '4.jfif');
+            adSidebar.prop('src', '4.jfif');
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
